@@ -1,0 +1,431 @@
+[
+    {
+        "id": "ed29af454e740314",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "60a2735e3d205952",
+        "type": "server-state-changed",
+        "z": "ed29af454e740314",
+        "name": "",
+        "server": "fdf21bcecfadeaad",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.light2",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "1",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "2d28b562ee6a20c4"
+            ]
+        ]
+    },
+    {
+        "id": "c9d0d6c76dc243ce",
+        "type": "server-state-changed",
+        "z": "ed29af454e740314",
+        "name": "",
+        "server": "fdf21bcecfadeaad",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.fan",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "1",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "x": 200,
+        "y": 240,
+        "wires": [
+            [
+                "85e1ee96709f3920"
+            ]
+        ]
+    },
+    {
+        "id": "491461e9c1967813",
+        "type": "server-state-changed",
+        "z": "ed29af454e740314",
+        "name": "",
+        "server": "fdf21bcecfadeaad",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.light1",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "1",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "x": 200,
+        "y": 380,
+        "wires": [
+            [
+                "7e33c11db7a2fb49"
+            ]
+        ]
+    },
+    {
+        "id": "64009b77f67c12c6",
+        "type": "debug",
+        "z": "ed29af454e740314",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "19c65941982f6adc",
+        "type": "rpi-gpio out",
+        "z": "ed29af454e740314",
+        "name": "",
+        "pin": "4",
+        "set": true,
+        "level": "1",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 840,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c183ef843e0247d2",
+        "type": "rpi-gpio out",
+        "z": "ed29af454e740314",
+        "name": "",
+        "pin": "27",
+        "set": true,
+        "level": "1",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 840,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "478dab1e7a146ab6",
+        "type": "rpi-gpio out",
+        "z": "ed29af454e740314",
+        "name": "",
+        "pin": "17",
+        "set": true,
+        "level": "1",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 840,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2d28b562ee6a20c4",
+        "type": "function",
+        "z": "ed29af454e740314",
+        "name": "function 1",
+        "func": "if (msg.payload==\"on\"){\n    msg.payload=false\n}\nelse{\n    msg.payload=true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 100,
+        "wires": [
+            [
+                "19c65941982f6adc",
+                "64009b77f67c12c6"
+            ]
+        ]
+    },
+    {
+        "id": "85e1ee96709f3920",
+        "type": "function",
+        "z": "ed29af454e740314",
+        "name": "function 2",
+        "func": "if (msg.payload==\"on\"){\n    msg.payload=false\n}\nelse{\n    msg.payload=true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "c183ef843e0247d2",
+                "64009b77f67c12c6"
+            ]
+        ]
+    },
+    {
+        "id": "7e33c11db7a2fb49",
+        "type": "function",
+        "z": "ed29af454e740314",
+        "name": "function 3",
+        "func": "if (msg.payload==\"on\"){\n    msg.payload=false\n}\nelse{\n    msg.payload=true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 380,
+        "wires": [
+            [
+                "478dab1e7a146ab6",
+                "64009b77f67c12c6"
+            ]
+        ]
+    },
+    {
+        "id": "ef883a5e0f507fd5",
+        "type": "inject",
+        "z": "ed29af454e740314",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 290,
+        "y": 140,
+        "wires": [
+            [
+                "2d28b562ee6a20c4"
+            ]
+        ]
+    },
+    {
+        "id": "780b9bb95ff74bc5",
+        "type": "inject",
+        "z": "ed29af454e740314",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 290,
+        "y": 280,
+        "wires": [
+            [
+                "85e1ee96709f3920"
+            ]
+        ]
+    },
+    {
+        "id": "55062164dec7d5cf",
+        "type": "inject",
+        "z": "ed29af454e740314",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "7e33c11db7a2fb49"
+            ]
+        ]
+    },
+    {
+        "id": "38c5395e3579a576",
+        "type": "inject",
+        "z": "ed29af454e740314",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 290,
+        "y": 320,
+        "wires": [
+            [
+                "85e1ee96709f3920"
+            ]
+        ]
+    },
+    {
+        "id": "d94055c4508f7027",
+        "type": "inject",
+        "z": "ed29af454e740314",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 290,
+        "y": 460,
+        "wires": [
+            [
+                "7e33c11db7a2fb49"
+            ]
+        ]
+    },
+    {
+        "id": "c6096d1e7342c6ea",
+        "type": "inject",
+        "z": "ed29af454e740314",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "2d28b562ee6a20c4"
+            ]
+        ]
+    },
+    {
+        "id": "fdf21bcecfadeaad",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": ": ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "default",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": false
+    }
+]
